@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import StdCard from "./modules/StdCards";
 
 function App() {
+  const [stds, setstds] = useState([
+    {
+      name: "Ram Kumar",
+      class: "BCA",
+      subStream: "CS",
+    },
+    {
+      name: "Shatrughan Kumar",
+      class: "12",
+      subStream: "Art",
+    },
+    {
+      name: "Bharat Kumar",
+      class: "10",
+      subStream: "Mathematics",
+    },
+    {
+      name: "Lakshman",
+      class: "11",
+      subStream: "Art",
+    },
+  ]);
+
+  useEffect(() => {
+    // console.log(stds);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h3>Students List</h3>
+      <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap" }}>
+        {stds.map((std, index) => (
+          <StdCard stdDetails={std} key={index} />
+        ))}
+      </div>
+    </>
   );
 }
 
