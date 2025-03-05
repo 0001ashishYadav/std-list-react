@@ -32,8 +32,14 @@ function App() {
 
   return (
     <>
-      <h3>Students List</h3>
-      <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap" }}>
+      <h3 style={{}}>Students List</h3>
+      <div
+        style={{
+          display: "flex",
+          gap: "1.25rem",
+          flexWrap: "wrap",
+        }}
+      >
         {stds.map((std, index) => (
           <StdCard stdDetails={std} key={index} />
         ))}
