@@ -1,0 +1,100 @@
+header{
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(73, 48, 136);
+    background-color: bisque;
+    padding: .5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header img {
+    height: 50px;
+    width: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.buttonCon {
+    font-size: 40px;
+    display: none;
+}
+
+
+.drawer {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(255, 228, 196);
+    display: flex;
+    justify-content: end;
+    transition:0.5s ease-in-out;
+    transform: translateX(200%);
+}
+
+.drawerActive{
+    transform: translateX(0);
+}
+
+.drawer aside{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+    padding: 2rem;
+}
+
+.drawer aside .drawerCloseBtn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.drawer aside div{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 5rem;
+}
+@media screen and (max-width:600px) {
+
+    header{
+        height: 50px;
+        padding: 0rem 1.25rem;
+    }
+
+    header img {
+        height: 30px;
+        width: 30px;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .buttonCon {
+        font-size: 20px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .drawer{
+        transform: translateX(200%);
+    }
+}

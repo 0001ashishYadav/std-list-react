@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import StdCard from "./modules/StdCards";
 
+import Navbar from "./modules/Navbar.js";
+
 function App() {
   const [stds, setstds] = useState([
     {
@@ -32,14 +34,11 @@ function App() {
 
   return (
     <>
-      <h3 style={{}}>Students List</h3>
-      <div
-        style={{
-          display: "flex",
-          gap: "1.25rem",
-          flexWrap: "wrap",
-        }}
-      >
+      <Navbar />
+
+      <h3 style={{ marginTop: "112px" }}>Students List</h3>
+
+      <div className="stdCardCon">
         {stds.map((std, index) => (
           <StdCard stdDetails={std} key={index} />
         ))}
