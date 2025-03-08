@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import StdCard from "./modules/StdCards";
-
+import Popup from "./modules/Popup.js";
+import Accordian from "./modules/Accordian.js";
 import Navbar from "./modules/Navbar.js";
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
           <StdCard stdDetails={std} key={index} />
         ))}
       </div>
+
+      <Popup />
+
+      <Accordian />
     </>
   );
 }
