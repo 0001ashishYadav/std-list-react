@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Style from "./Accordian.module.css";
 
 function Accordian() {
@@ -15,7 +15,8 @@ function Accordian() {
       <div>
         <div className={Style.titleCon} onClick={msgHandler}>
           <h3>Are you want to see Magic ??</h3>
-          <FaChevronDown />
+
+          {!isMsgOpen ? <FaChevronDown /> : <FaChevronUp />}
         </div>
         <h5 className={`${Style.msg} ${isMsgOpen ? Style.activeMsg : ""}`}>
           It's Magic It's Magic It's Magic 🤣🤣🤣 .......
